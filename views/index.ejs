@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> <%= title %> </h1>
+    <a href="/new">Add a new message</a>
+    <main>
+        <% for ( let message of messages ) { %>
+            <div class="message">
+                <h3><%= message.text %></h3>
+                <div>
+                    <span><%= message.user %></span>
+                    <span> <%= message.added %> </span>
+                </div>
+                <button onclick="location.href = '/<%= message.id %>'"> Open </button>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>
